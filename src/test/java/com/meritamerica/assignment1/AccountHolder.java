@@ -1,6 +1,9 @@
-package src.main.java.com.meritamerica.assignment1;
+package src.test.java.com.meritamerica.assignment1;
 
 import java.text.DecimalFormat;
+
+import src.main.java.com.meritamerica.assignment1.CheckingAccount;
+import src.main.java.com.meritamerica.assignment1.SavingsAccount;
 
 public class AccountHolder {
 	private String fName = "";
@@ -8,9 +11,10 @@ public class AccountHolder {
 	private String lName = "";
 	private String ssn = "";
 	
+	private static final double checkingAccountStartBal = 0;
 	CheckingAccount checkingaccount = null;
 	SavingsAccount savingaccount = null;
-	
+	private CheckingAccount savingsaccount;
 	
 	public AccountHolder() {
 		System.out.println("This console logs the AccountHolder constructor");
@@ -63,20 +67,12 @@ public class AccountHolder {
 	
 	public CheckingAccount getCheckingAccount() {
 		return checkingaccount;
-	}	
-	public void setCheckingAccount(CheckingAccount checkingaccount) {
-		this.checkingaccount = checkingaccount;
 	}
 	
 	
 	public SavingsAccount getSavingsAccount() {
 		return savingaccount;
 	}
-	public void setSavingsAccount(SavingsAccount savingaccount) {
-		this.savingaccount = savingaccount;
-	}
-	
-	
 	
 	public String toString() {
 		DecimalFormat decf = new DecimalFormat("0.##");
@@ -84,7 +80,6 @@ public class AccountHolder {
 		return "Acount holders name: " + fName + " " + mName + " " + lName + "\n"
 				+ "Social Security number: " + ssn + "\n"
 				+ "The checking account balance: " + decf.format(checkingaccount.getTheBalance()) + "\n"
-				+ "The saving account balance:" + decf.format(savingaccount.getTheBalance()) + "\n"
 				+ "Checking Account balance in 3 years: " + decf.format(checkingaccount.interestVal(3)) + "\n"
 				+ "Savings Account balance in 3 n years: " + decf.format(savingaccount.interestVal(3)) + "\n"
 				+ "The Checking Account with an interest rate of: " + checkingaccount.getIntRate() + "\n"

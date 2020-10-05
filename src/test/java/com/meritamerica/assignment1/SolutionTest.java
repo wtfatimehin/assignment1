@@ -35,6 +35,9 @@
 package com.meritamerica.assignment1;
 
 import org.junit.Test;
+
+import com.meritamerica.assignment1.AccountHolder;
+
 import static org.junit.Assert.*;
 
 public class SolutionTest {
